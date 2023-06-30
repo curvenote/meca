@@ -38,7 +38,7 @@ jobs:
       - run: npm run build
       - run: npm run link
       # Examples of using the CLI
-      - run: meca validate packages/meca/tests/example.xml
+      - run: meca validate packages/meca/tests/example.zip
   test:
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
