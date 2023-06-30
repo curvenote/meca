@@ -47,9 +47,9 @@ function errorAndClean(session: ISession, msg: string, tempFolder?: string) {
 
 function removeTempFolder(tempFolder?: string) {
   if (tempFolder && fs.existsSync(tempFolder)) {
-    if ((fs as any).rmSync) {
+    if (fs.rmSync) {
       // Node >= 14.14
-      (fs as any).rmSync(tempFolder, { recursive: true });
+      fs.rmSync(tempFolder, { recursive: true });
     } else {
       // Node < 14.14
       fs.rmdirSync(tempFolder, { recursive: true });
