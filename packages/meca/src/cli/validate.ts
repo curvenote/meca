@@ -1,20 +1,20 @@
 import { Command, Option } from 'commander';
 import { clirun } from 'myst-cli-utils';
 import { getSession } from '../session.js';
-import { validateMecaAgainstDtd } from '../validate/index.js';
+import { validateMecaWrapper } from '../validate/index.js';
 
 function makeValidateCLI(program: Command) {
   const command = new Command('validate')
     .description(
       `
-      Validate JATS file against DTD schema.
+      Validate MECA file against zip structure and DTD schemas.
 
-      The JATS DTD schema file is fetched from nih.gov ftp server if not available locally.
-      This will attempt to infer the specific JATS DTD version, library, etc from the file header,
-      but options are available to override the inferred values.
+      The zip file must have a 'manifest.xml' file which must pass Manifest DTD validation.
+      All the files in the manifest must exist in the zip file, with no others present.
+      Any JATS files must validate against JATS DTD schema.
       `,
     )
-    .argument('<file>', 'JATS file to validate')
+    .argument('<file>', 'MECA file to validate')
     .addOption(
       new Option(
         '--library <value>',
@@ -39,8 +39,8 @@ function makeValidateCLI(program: Command) {
         'Use OASIS table model (default: false, if value cannot be inferred from file)',
       ),
     )
-    .addOption(new Option('--directory <value>', 'Directory to save DTD file'))
-    .action(clirun(validateMecaAgainstDtd, { program, getSession }));
+    .addOption(new Option('--directory <value>', 'Directory to save JATS DTD file'))
+    .action(clirun(validateMecaWrapper, { program, getSession }));
   return command;
 }
 
