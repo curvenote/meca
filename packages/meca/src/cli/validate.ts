@@ -1,6 +1,6 @@
 import { Command, Option } from 'commander';
 import { clirun } from 'myst-cli-utils';
-import { getSession } from '../session.js';
+import { getSession } from 'jats-xml';
 import { validateMecaWrapper } from '../validate/index.js';
 
 function makeValidateCLI(program: Command) {
