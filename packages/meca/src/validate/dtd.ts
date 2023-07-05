@@ -5,9 +5,8 @@ import AdmZip from 'adm-zip';
 import chalk from 'chalk';
 import type { Element } from 'xml-js';
 import { xml2js } from 'xml-js';
-import type { JatsOptions } from 'jats-xml';
+import type { ISession, JatsOptions } from 'jats-xml';
 import { validateJatsAgainstDtd, xmllintValidate } from 'jats-xml';
-import type { ISession } from '../types.js';
 
 const KNOWN_ITEM_TYPES: string[] = [
   'article-metadata',

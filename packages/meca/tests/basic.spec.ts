@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
+import { Session } from 'jats-xml';
 import { validateMeca, validateMecaWrapper } from '../src';
-import { Session } from '../src/session';
 
 describe('meca validation', () => {
   test('empty file is invalid', async () => {
