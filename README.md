@@ -4,24 +4,9 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/curvenote/meca/blob/main/LICENSE)
 [![CI](https://github.com/curvenote/meca/workflows/CI/badge.svg)](https://github.com/curvenote/meca/actions)
 
-Types and utilities for working with MECA bundles documents in Node and Typescript.
+The package has been moved to a monorepo:
 
-Read and write MECA bundles from node or see summaries from the command line.
-
-To use from the command line, use the `-g` to create a global install, which will provide a `meca` CLI:
-
-```
-npm install -g meca
-meca -v
-```
-
-## What is MECA?
-
-## Packages
-
-See packages folder:
-
-- meca
+https://github.com/curvenote/jats
 
 ---
 
